@@ -1,0 +1,56 @@
+[16,21,11,8,12,22] -> Merge Sort
+
+*Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
+
+	1.dizideki elemanları ikiye böleriz 
+
+		[16,21,11,8,12,22] bölünür [16,21,11] |  [8,12,22]
+
+	2.oluşturduğumuz 2 dizini yine ikiye böleriz 
+
+		Sol: [16, 21, 11] bölünür: [16] | [21, 11]
+		
+
+		Sağ: [8, 12, 22] bölünür: [8] | [12, 22]
+
+
+	3. tekrar bölme
+
+		*Tekrar bölme, her tarafta 1 eleman kalana kadar devam eder.
+
+		Sol: [21, 11] bölünür: [21] | [11]
+
+
+		Sağ: [12, 22] bölünür: [12] | [22]
+
+	4.Birleştirme
+
+		*Birleştirme gerçekleştirilirken soldan başlanır, diğerleriyle karşılaştırılır ve en küçük olan en sola yazılır.
+		
+		Sol: [16] | [21] | [11] birleştirilir: [11, 16, 21]
+
+
+		Sağ: [8] |  [12] | [22] birleştirilir: [8, 12, 22]
+
+	5.Birleştirme
+		
+		*Sol ve sağ olmak üzere 2 tane sıralı array var.Bunları birleştirirken sol tarafın en küçüğü ile sağ tarafın en küçüğü karşılaştırılır. En küçük olan sola yazılır. Sonra sol arrayin ikinci elemanı seçilir, sağ tarafın elemanlarına bakılır,eğer sol taraftaki elemandan küçüğü varsa o yazılır. ve tüm elemanlar yerleştriline kadar bu işlem devam eder.
+
+	11 mi küçük 8 mi? => 8
+	11 mi küçük 12 mi? => 11
+	16 mı küçük 12 mi? =>12
+	16 mı küçük 22 mi? => 16
+	21 mi küçük 22 mi? =>21
+	Kalan:22
+		
+		[8,11,12,16,21,22]
+		
+		
+
+		
+	
+*Big-O gösterimini yazınız.
+
+	Bölme işlemi O(log n) adımda gerçekleşir ( n=2^x => x = logn)
+	Birleştirme işlemi O(n) zaman alır çünkü her eleman bir kez geçer ve bu elemanlar birleştirilir.
+	Toplam zaman karmaşıklığı O(nlogn) olur.
